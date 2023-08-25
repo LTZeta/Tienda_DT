@@ -7,8 +7,8 @@ public class ProductoDeLimpieza extends Producto implements ConDescuento {
     private String tipoDeAplicacion;
     private Float porcentajeDescuento;
 
-    public ProductoDeLimpieza(String id, String descripcion, Integer cantEnStock, Float precioVentaAlPublico, Float costoProducto, boolean estaDisponible, String tipoDeAplicacion) throws Exception{
-        super(id, descripcion, cantEnStock, precioVentaAlPublico, costoProducto, estaDisponible);
+    public ProductoDeLimpieza(String id, String descripcion, Integer cantEnStock, Float precioVentaAlPublico, Float costoProducto, boolean estaDisponible, String tipoDeAplicacion, String categoria) throws Exception{
+        super(id, descripcion, cantEnStock, precioVentaAlPublico, costoProducto, estaDisponible, categoria);
         this.tipoDeAplicacion = tipoDeAplicacion;
     }
 

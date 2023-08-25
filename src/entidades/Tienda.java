@@ -23,7 +23,7 @@ public class Tienda {
         productosEnStock.put(KEY_LIMPIEZA, new ArrayList<>());
     }
 
-    public void agregarProducto(String tipo, Producto producto, int cantidad) throws Exception {
+    public void agregarProductoAStock(String tipo, Producto producto, int cantidad) throws Exception {
         if (productosEnStock.containsKey(tipo) && productosEnStock.get(tipo).size() + 1 <= MAX_PRODUCTOS_EN_STOCK) {
             productosEnStock.get(tipo).add(producto);
             Float costoTotal = producto.getCostoProducto() * cantidad;
@@ -40,46 +40,49 @@ public class Tienda {
     }
 
 
-    public ProductoEnvasado crearEnvasado(String id, String descripcion, Integer cantEnStock, Float precioVentaAlPublico, Float costoProducto, boolean estaDisponible, String tipoEnvase, boolean esImportado, Date fechaVencimiento, Integer calorias) throws Exception {
-        ProductoEnvasado nuevoProducto = new ProductoEnvasado(id, descripcion, cantEnStock, precioVentaAlPublico, costoProducto, estaDisponible, tipoEnvase, esImportado, fechaVencimiento, calorias);
+    public void crearEnvasado(ProductoEnvasado nuevoProducto) throws Exception {
         ArrayList<Producto> productos = productosEnStock.get(KEY_ENVASADOS);
         for (Producto producto: productos) {
-            if (producto.getId().equalsIgnoreCase(id)){
-                throw new Exception("El producto que desea crear ya existe" + "El producto es: '"+producto.getDescripcion()+"'");
+            if (producto.getId().equalsIgnoreCase(nuevoProducto.getId())){
+                throw new Exception("El producto que desea crear ya existe\n" + "El producto es: '"+producto.getDescripcion()+"'");
             }
         }
-        productos.add(nuevoProducto);
-        agregarProducto(KEY_ENVASADOS, nuevoProducto, cantEnStock);
-        System.out.println("El producto fue creado exitosamente");
-        return nuevoProducto;
+        try {
+            agregarProductoAStock(KEY_ENVASADOS, nuevoProducto, nuevoProducto.getCantEnStock());
+            System.out.println("El producto fue creado exitosamente");
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
-    public ProductoBebida crearBebida(String id, String descripcion, Integer cantEnStock, Float precioVentaAlPublico, Float costoProducto, boolean estaDisponible, boolean esAlcoholica, boolean esImportado, Date fechaVencimiento, Integer calorias) throws Exception {
-        ProductoBebida nuevoProducto = new ProductoBebida(id, descripcion, cantEnStock, precioVentaAlPublico, costoProducto, estaDisponible, esAlcoholica, esImportado, fechaVencimiento, calorias);
+    public void crearBebida(ProductoBebida nuevoProducto) throws Exception {
         ArrayList<Producto> productos = productosEnStock.get(KEY_BEBIDAS);
         for (Producto producto: productos) {
-            if (producto.getId().equalsIgnoreCase(id)){
-                throw new Exception("El producto que desea crear ya existe" + "El producto es: '"+producto.getDescripcion()+"'");
+            if (producto.getId().equalsIgnoreCase(nuevoProducto.getId())){
+                throw new Exception("El producto que desea crear ya existe\n" + "El producto es: '"+producto.getDescripcion()+"'");
             }
         }
-        productos.add(nuevoProducto);
-        agregarProducto(KEY_BEBIDAS, nuevoProducto, cantEnStock);
-        System.out.println("El producto fue creado exitosamente");
-        return nuevoProducto;
+        try {
+            agregarProductoAStock(KEY_BEBIDAS, nuevoProducto, nuevoProducto.getCantEnStock());
+            System.out.println("El producto fue creado exitosamente");
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
-    public ProductoDeLimpieza crearDeLimpieza(String id, String descripcion, Integer cantEnStock, Float precioVentaAlPublico, Float costoProducto, boolean estaDisponible, String tipoDeAplicacion) throws Exception {
-        ProductoDeLimpieza nuevoProducto = new ProductoDeLimpieza(id, descripcion, cantEnStock, precioVentaAlPublico, costoProducto, estaDisponible, tipoDeAplicacion);
+    public void crearDeLimpieza(ProductoDeLimpieza nuevoProducto) throws Exception {
         ArrayList<Producto> productos = productosEnStock.get(KEY_LIMPIEZA);
         for (Producto producto: productos) {
-            if (producto.getId().equalsIgnoreCase(id)){
-                throw new Exception("El producto que desea crear ya existe" + "El producto es: '"+producto.getDescripcion()+"'");
+            if (producto.getId().equalsIgnoreCase(nuevoProducto.getId())){
+                throw new Exception("El producto que desea crear ya existe\n" + "El producto es: '"+producto.getDescripcion()+"'");
             }
         }
-        productos.add(nuevoProducto);
-        agregarProducto(KEY_LIMPIEZA, nuevoProducto, cantEnStock);
-        System.out.println("El producto fue creado exitosamente");
-        return nuevoProducto;
+        try {
+            agregarProductoAStock(KEY_LIMPIEZA, nuevoProducto, nuevoProducto.getCantEnStock());
+            System.out.println("El producto fue creado exitosamente");
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
     public void deshabilitarProducto(String tipo, String codigoProducto) throws Exception {
@@ -118,26 +121,14 @@ public class Tienda {
                     precioUnitario *= 1.10f; // Aplicar impuesto del 10%
                 }
             }
-
-            // Aplicar descuento si aplica
-/*            Float descuento = producto.getPorcentajeDescuento();
-            if (descuento > 0 && descuento <= producto.getMaxPorcentajeDescuento()) {
-                Float precioDescuento = precioUnitario * (1 - descuento / 100);
-                if (precioDescuento >= producto.getPrecioCompra()) {
-                    precioUnitario = precioDescuento;
-                } else {
-                    System.out.println("El descuento registrado para el producto " + producto.getIdentificador() + " no pudo ser aplicado.");
-                }
-            }*/
-
             totalVenta += cantidadVendida * precioUnitario;
             producto.setCantEnStock(producto.getCantEnStock() - cantidadVendida);
         }
 
         // Imprimir mensajes adicionales
-/*        if (hayStockInsuficiente) {
+        if (hayStockInsuficiente) {
             System.out.println("Hay productos con stock disponible menor al solicitado.");
-        }*/
+        }
         if (hayProductosNoDisponibles) {
             System.out.println("Algunos productos no están disponibles para la venta.");
         }
@@ -155,6 +146,23 @@ public class Tienda {
                 ", productosEnStock=" + productosEnStock +
                 '}';
     }
+
+    public void mostrarProductos(){
+        for (Map.Entry<String, ArrayList<Producto>> entry : productosEnStock.entrySet()) {
+            String categoria = entry.getKey();
+            List<Producto> productos = entry.getValue();
+
+            System.out.println("Categoría: " + categoria);
+
+            for (Producto producto : productos) {
+                System.out.println("Identificador: " + producto.getId());
+                System.out.println("Descripción: " + producto.getDescripcion());
+                // Mostrar otros atributos relevantes del producto
+                System.out.println();
+            }
+        }
+    }
+
 
     public String getKEY_ENVASADOS() {
         return KEY_ENVASADOS;
@@ -204,4 +212,13 @@ public class Tienda {
         return productosEnStock;
     }
 
+    public List<Producto> generarListaDeProductos(List<ItemCompra> carrito) throws Exception {
+        if (carrito.isEmpty()){
+            List<Producto> productos = new ArrayList<>();
+            for (ItemCompra item: carrito) {
+                productos.add(item.getProducto());
+            }
+            return productos;
+        }else throw new Exception("El carrito esta vacio, no se modifico el stock ni se realizo ninguna venta");
+    }
 }

@@ -14,14 +14,17 @@ public abstract class Producto {
     protected Float costoProducto;
     protected boolean estaDisponible;
 
+    protected String categoria;
+
     //Constructor
-    protected Producto(String id, String descripcion, Integer cantEnStock, Float precioVentaAlPublico, Float costoProducto, boolean estaDisponible) throws Exception{
+    protected Producto(String id, String descripcion, Integer cantEnStock, Float precioVentaAlPublico, Float costoProducto, boolean estaDisponible, String categoria) throws Exception{
         this.id = id;
         this.descripcion = descripcion;
         this.cantEnStock = cantEnStock;
         this.precioVentaAlPublico = precioVentaAlPublico;
         this.costoProducto = costoProducto;
         this.estaDisponible = estaDisponible;
+        this.categoria = categoria;
     }
 
     //Getters y setters
@@ -73,4 +76,13 @@ public abstract class Producto {
         return estaDisponible;
     }
 
+    public boolean isEstaDisponible() {
+        return estaDisponible;
+    }
+    public String getCategoria() {
+        return categoria;
+    }
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
 }

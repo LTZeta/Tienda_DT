@@ -13,8 +13,8 @@ public class ProductoEnvasado extends Producto implements Comestibles, ConDescue
     private Integer calorias;
     private Float porcentajeDescuento;
 
-    public ProductoEnvasado(String id, String descripcion, Integer cantEnStock, Float precioVentaAlPublico, Float costoProducto, boolean estaDisponible, String tipoEnvase, boolean esImportado, Date fechaVencimiento, Integer calorias) throws Exception{
-        super(id, descripcion, cantEnStock, precioVentaAlPublico, costoProducto, estaDisponible);
+    public ProductoEnvasado(String id, String descripcion, Integer cantEnStock, Float precioVentaAlPublico, Float costoProducto, boolean estaDisponible, String tipoEnvase, boolean esImportado, Date fechaVencimiento, Integer calorias, String categoria) throws Exception{
+        super(id, descripcion, cantEnStock, precioVentaAlPublico, costoProducto, estaDisponible, categoria);
         this.tipoEnvase = tipoEnvase;
         this.esImportado = esImportado;
         this.fechaVencimiento = fechaVencimiento;

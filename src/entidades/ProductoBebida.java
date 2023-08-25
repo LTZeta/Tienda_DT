@@ -14,8 +14,8 @@ public class ProductoBebida extends Producto implements Comestibles, ConDescuent
     private Integer calorias;
     private Float porcentajeDescuento;
 
-    public ProductoBebida(String id, String descripcion, Integer cantEnStock, Float precioVentaAlPublico, Float costoProducto, boolean estaDisponible, boolean esAlcoholica, boolean esImportado, Date fechaVencimiento, Integer calorias) throws Exception{
-        super(id, descripcion, cantEnStock, precioVentaAlPublico, costoProducto, estaDisponible);
+    public ProductoBebida(String id, String descripcion, Integer cantEnStock, Float precioVentaAlPublico, Float costoProducto, boolean estaDisponible, boolean esAlcoholica, boolean esImportado, Date fechaVencimiento, Integer calorias, String categoria) throws Exception{
+        super(id, descripcion, cantEnStock, precioVentaAlPublico, costoProducto, estaDisponible, categoria);
         this.esAlcoholica = esAlcoholica;
         this.esImportado = esImportado;
         this.fechaVencimiento = fechaVencimiento;

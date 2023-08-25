@@ -1,12 +1,10 @@
 package main.menus;
 
-import entidades.ProductoBebida;
-import entidades.ProductoDeLimpieza;
-import entidades.ProductoEnvasado;
-import entidades.Tienda;
+import entidades.*;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
@@ -18,7 +16,7 @@ public class Menu {
 
         Scanner scanner = new Scanner(System.in);
         SimpleDateFormat formatoEntrada = new SimpleDateFormat("dd-MM-yyyy");
-        ProductoEnvasado nuevoProducto = new ProductoEnvasado("", "", 0, 0F, 0F, true, "", true, new Date(), 0);
+        ProductoEnvasado nuevoProducto = new ProductoEnvasado("", "", 0, 0F, 0F, true, "", true, new Date(), 0, "");
         id = tienda.getPREFIJO_ID_ENVASADOS();
         key = tienda.getKEY_ENVASADOS();
 
@@ -65,7 +63,7 @@ public class Menu {
         System.out.println("Ingresa las calorias del producto:");
         nuevoProducto.setCalorias(scanner.nextInt());
         try {
-            tienda.agregarProducto(key, nuevoProducto, nuevoProducto.getCantEnStock());
+            tienda.crearEnvasado(nuevoProducto);
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
@@ -75,7 +73,7 @@ public class Menu {
     public Tienda crearProductoBebida(Tienda tienda) throws Exception {
         Scanner scanner = new Scanner(System.in);
         SimpleDateFormat formatoEntrada = new SimpleDateFormat("dd-MM-yyyy");
-        ProductoBebida nuevoProducto = new ProductoBebida("", "", 0, 0F, 0F, true, false, true, new Date(), 0);
+        ProductoBebida nuevoProducto = new ProductoBebida("", "", 0, 0F, 0F, true, false, true, new Date(), 0, "");
         id = tienda.getPREFIJO_ID_BEBIDAS();
         key = tienda.getKEY_BEBIDAS();
 
@@ -116,7 +114,7 @@ public class Menu {
         System.out.println("Ingresa las calorias del producto:");
         nuevoProducto.setCalorias(scanner.nextInt());
         try {
-            tienda.agregarProducto(key, nuevoProducto, nuevoProducto.getCantEnStock());
+            tienda.agregarProductoAStock(key, nuevoProducto, nuevoProducto.getCantEnStock());
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
@@ -125,8 +123,7 @@ public class Menu {
 
     public Tienda crearProductoLimpieza(Tienda tienda) throws Exception {
         Scanner scanner = new Scanner(System.in);
-        SimpleDateFormat formatoEntrada = new SimpleDateFormat("dd-MM-yyyy");
-        ProductoDeLimpieza nuevoProducto = new ProductoDeLimpieza("", "", 0, 0F, 0F, true, "");
+        ProductoDeLimpieza nuevoProducto = new ProductoDeLimpieza("", "", 0, 0F, 0F, true, "", "");
         id = tienda.getPREFIJO_ID_LIMPIEZA();
         key = tienda.getKEY_LIMPIEZA();
 
@@ -164,10 +161,106 @@ public class Menu {
                 break;
         }
         try {
-            tienda.agregarProducto(key, nuevoProducto, nuevoProducto.getCantEnStock());
+            tienda.agregarProductoAStock(key, nuevoProducto, nuevoProducto.getCantEnStock());
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
         return tienda;
+    }
+
+    public void menuDeVentas(Scanner scanner, Tienda tienda, List<ItemCompra> carrito){
+        boolean bandera = true;
+        while (bandera) {
+            System.out.println("\nMenú de ventas:");
+            System.out.println("1. Mostrar productos en stock");
+            System.out.println("2. Vender productos");
+            System.out.println("3. Ver carrito");
+            System.out.println("4. Eliminar producto del carrito");
+            System.out.println("5. Finalizar compra");
+            System.out.println("6. Volver atras");
+            System.out.print("Elija una opción: ");
+            byte opcion = scanner.nextByte();
+            scanner.nextLine(); // Consumir el salto de línea pendiente
+
+            switch (opcion) {
+                case 1:
+                    tienda.mostrarProductos();
+                    break;
+                case 2:
+                    System.out.println("Para agregar un producto al carrito favor de ingresar el codigo más la cantidad que desea llevar");
+                    System.out.println("Ingrese el ID del producto a vender: ");
+                    String idProducto = scanner.next();
+                    System.out.println("Ingrese la cantidad a vender: ");
+                    int cantidad = scanner.nextInt();
+                    try {
+                        agregarProductoAlCarrito(carrito, tienda, idProducto, cantidad);
+                    }catch (Exception e){
+                        System.out.println(e.getMessage());
+                    }
+                    break;
+                case 3:
+                    // Ver carrito
+                    System.out.println("Carrito de compras:");
+                    for (ItemCompra item : carrito) {
+                        System.out.println("Producto: " + item.getProducto().getDescripcion() +
+                                ", Cantidad: " + item.getCantidad());
+                    }
+                    break;
+                case 4:
+                    // Eliminar producto del carrito
+                    System.out.println("Ingrese el indice del producto a eliminar:");
+                    int indiceEliminar = scanner.nextInt();
+                    scanner.nextLine(); // Consumir el salto de línea pendiente
+                    if (indiceEliminar >= 0 && indiceEliminar < carrito.size()) {
+                        carrito.remove(indiceEliminar);
+                        System.out.println("Producto eliminado del carrito.");
+                    } else {
+                        System.out.println("Índice inválido.");
+                    }
+                    break;
+                case 5:
+                    // Finalizar compra
+                    // Implementación
+                    try {
+                        List<Producto> productos = tienda.generarListaDeProductos(carrito);
+                    }catch (Exception e){
+                        System.out.println(e.getMessage());
+                    }
+                    bandera = false;
+                    break;
+                case 6:
+                    System.out.println("Saliendo del programa...");
+                    scanner.close();
+                    bandera = false;
+                    break;
+                default:
+                    System.out.println("Opción inválida.");
+            }
+        }
+    }
+
+    public void agregarProductoAlCarrito(List<ItemCompra> carrito, Tienda tienda, String idProducto, int cantidad) throws Exception {
+        if (idProducto.startsWith("AB")) {
+            List<Producto> productos = tienda.getProductosEnStock().get(tienda.getKEY_ENVASADOS());
+            for (Producto p: productos) {
+                if (p.getId().equalsIgnoreCase(idProducto) && p.getCantEnStock() >= cantidad){
+                    carrito.add(new ItemCompra(p, cantidad));
+                }
+            }
+        } else if (idProducto.startsWith("AC")) {
+            List<Producto> productos = tienda.getProductosEnStock().get(tienda.getKEY_BEBIDAS());
+            for (Producto p: productos) {
+                if (p.getId().equalsIgnoreCase(idProducto) && p.getCantEnStock() >= cantidad){
+                    carrito.add(new ItemCompra(p, cantidad));
+                }
+            }
+        } else if (idProducto.startsWith("AZ")) {
+            List<Producto> productos = tienda.getProductosEnStock().get(tienda.getKEY_LIMPIEZA());
+            for (Producto p: productos) {
+                if (p.getId().equalsIgnoreCase(idProducto) && p.getCantEnStock() >= cantidad){
+                    carrito.add(new ItemCompra(p, cantidad));
+                }
+            }
+        }else throw new Exception("El código ingresado no es válido");
     }
 }
