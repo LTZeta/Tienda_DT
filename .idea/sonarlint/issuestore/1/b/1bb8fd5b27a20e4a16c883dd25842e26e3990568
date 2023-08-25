@@ -1,0 +1,60 @@
+
+g	java:S112#"FDefine and throw a dedicated exception instead of using a generic one.(´¨¨Šýÿÿÿÿ8½ÿ¶Ê¢1
+g	java:S112&"FDefine and throw a dedicated exception instead of using a generic one.(­Í¹ýþÿÿÿÿ8½ÿ¶Ê¢1
+b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(¾ÀÄ­8¾ÿ¶Ê¢1
+g	java:S1120"FDefine and throw a dedicated exception instead of using a generic one.(š’ÎŸÿÿÿÿÿ8¾ÿ¶Ê¢1
+g	java:S112>"FDefine and throw a dedicated exception instead of using a generic one.(š’ÎŸÿÿÿÿÿ8¾ÿ¶Ê¢1
+g	java:S112L"FDefine and throw a dedicated exception instead of using a generic one.(š’ÎŸÿÿÿÿÿ8¾ÿ¶Ê¢1
+g	java:S112U"FDefine and throw a dedicated exception instead of using a generic one.(ÂŠ»Ñøÿÿÿÿ8¾ÿ¶Ê¢1
+†
+java:S11925"dDefine a constant instead of duplicating this literal "El producto fue creado exitosamente" 3 times.(÷Ù¤„øÿÿÿÿ8¿ÿ¶Ê¢1
+t
+java:S11920"RDefine a constant instead of duplicating this literal "El producto es: '" 3 times.(š’ÎŸÿÿÿÿÿ8¿ÿ¶Ê¢1
+ˆ
+java:S11920"fDefine a constant instead of duplicating this literal "El producto que desea crear ya existe" 3 times.(š’ÎŸÿÿÿÿÿ8¿ÿ¶Ê¢1
+L
+java:S1066u"/Merge this if statement with the enclosing one.(³¡üË8¿ÿ¶Ê¢1
+‚	java:S116"aRename this field "MAX_PRODUCTOS_EN_STOCK" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(öþ«¥úÿÿÿÿ8Ò€·Ê¢1
+y	java:S116
+"XRename this field "KEY_ENVASADOS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ð±Í´ÿÿÿÿÿ8Ò€·Ê¢1
+q	java:S116"VRename this field "KEY_BEBIDAS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒÅç8Ò€·Ê¢1
+x	java:S116"WRename this field "KEY_LIMPIEZA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ýá”¿þÿÿÿÿ8´Â¸Ê¢1
+{	java:S116"_Rename this field "PREFIJO_ID_ENVASADOS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ÕÁ¦8Ò€·Ê¢1
+~	java:S116"]Rename this field "PREFIJO_ID_BEBIDAS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×‚É‘ýÿÿÿÿ8ÅÍ·Ê¢1
+	java:S116"^Rename this field "PREFIJO_ID_LIMPIEZA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–™ðƒøÿÿÿÿ8èî·Ê¢1
+C
+java:S1170"!Make this final field static too.(öþ«¥úÿÿÿÿ8Ò€·Ê¢1
+C
+java:S1170
+"!Make this final field static too.(ð±Í´ÿÿÿÿÿ8Ò€·Ê¢1
+=
+java:S1170"!Make this final field static too.(ƒÅç8Ò€·Ê¢1
+C
+java:S1170"!Make this final field static too.(ýá”¿þÿÿÿÿ8Ò€·Ê¢1
+>
+java:S1170"!Make this final field static too.(’ÕÁ¦8Ò€·Ê¢1
+C
+java:S1170"!Make this final field static too.(×‚É‘ýÿÿÿÿ8ÿ¦·Ê¢1
+C
+java:S1170"!Make this final field static too.(–™ðƒøÿÿÿÿ8ÿ¦·Ê¢1
+X	java:S107+"=Method has 10 parameters, which is greater than 7 authorized.(¾õ¼38Ô€·Ê¢1
+^	java:S1079"=Method has 10 parameters, which is greater than 7 authorized.(²ëä¢ùÿÿÿÿ8Ô€·Ê¢1
+U	java:S106 "9Replace this use of System.out or System.err by a logger.(É…¶Ö8Ú€·Ê¢1
+Z	java:S1065"9Replace this use of System.out or System.err by a logger.(÷Ù¤„øÿÿÿÿ8Þ€·Ê¢1
+Z	java:S106C"9Replace this use of System.out or System.err by a logger.(÷Ù¤„øÿÿÿÿ8à€·Ê¢1
+Z	java:S106Q"9Replace this use of System.out or System.err by a logger.(÷Ù¤„øÿÿÿÿ8á€·Ê¢1
+Ž
+java:S1130U"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(ÂŠ»Ñøÿÿÿÿ8â€·Ê¢1
+V
+java:S1481c"9Remove this unused "hayStockInsuficiente" local variable.(Ã”šõ8ä€·Ê¢1
+]	java:S125{"<This block of commented-out lines of code should be removed.(×—™Äýÿÿÿÿ8å€·Ê¢1
+^	java:S125Š"<This block of commented-out lines of code should be removed.(¤¡Æýÿÿÿÿ8æ€·Ê¢1
+U	java:S106Ž"9Replace this use of System.out or System.err by a logger.(Ó¹Õ8æ€·Ê¢1
+[	java:S106‘"9Replace this use of System.out or System.err by a logger.(ØŸúÿÿÿÿ8æ€·Ê¢1
+k	java:S100Ÿ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒÔçâ8ç€·Ê¢1
+k	java:S100£"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ñû—è8ç€·Ê¢1
+k	java:S100§"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãß¶š8ç€·Ê¢1
+k	java:S100«"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(á¹¦í8¬ËºÊ¢1
+k	java:S100¯"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åÙ†š8­ËºÊ¢1
+p	java:S100³"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€êÐ¸øÿÿÿÿ8­ËºÊ¢1
+p	java:S100¿"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßïþÙþÿÿÿÿ8è€·Ê¢1
