@@ -17,15 +17,15 @@ java:S1192Å"WDefine a constant instead of duplicating this literal " no pudo s
 java:S1192‹"hDefine a constant instead of duplicating this literal "Descuento actualizado para el producto " 3 times.(Úà±Èûÿÿÿÿ8ß›ÿü¢1
 †
 java:S1192;"dDefine a constant instead of duplicating this literal "El producto fue creado exitosamente" 3 times.(÷Ù¤„øÿÿÿÿ8à›ÿü¢1
+ˆ
+java:S1192Å"jDefine a constant instead of duplicating this literal "El descuento registrado para el producto " 3 times.( Õ½ô8à›ÿü¢1
+Š
+java:S1192®"lDefine a constant instead of duplicating this literal "El porcentaje de ganancia para el producto " 3 times.(–’·Ö8à›ÿü¢1
 t
 java:S11922"RDefine a constant instead of duplicating this literal "El producto es: '" 3 times.(ÓãùÌþÿÿÿÿ8à›ÿü¢1
 ‰
 java:S11922"gDefine a constant instead of duplicating this literal "El producto que desea crear ya existe
 " 3 times.(ÓãùÌþÿÿÿÿ8à›ÿü¢1
-ˆ
-java:S1192Å"jDefine a constant instead of duplicating this literal "El descuento registrado para el producto " 3 times.( Õ½ô8à›ÿü¢1
-Š
-java:S1192®"lDefine a constant instead of duplicating this literal "El porcentaje de ganancia para el producto " 3 times.(–’·Ö8à›ÿü¢1
 v	java:S135Š"YReduce the total number of break and continue statements in this loop to use at most one.(Ù¸¸â8à›ÿü¢1
 ‚	java:S116
 "aRename this field "MAX_PRODUCTOS_EN_STOCK" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Îêý·ûÿÿÿÿ8îœÿü¢1

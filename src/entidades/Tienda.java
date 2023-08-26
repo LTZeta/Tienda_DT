@@ -177,12 +177,12 @@ public class Tienda {
             }
 
             if (producto instanceof ProductoDeLimpieza){
-                float porcentajeGanancia = ((precioTotalProducto - (producto.getPrecioVentaAlPublico() * cantidadVendida)) / (producto.getPrecioVentaAlPublico() * cantidadVendida)) * 100;
-                float porcentajeGananciaMaximo = 25.0f;
-                float porcentajeGananciaMinimo = 10.0f;
-                float precioConDescuento = ((ProductoDeLimpieza) producto).getPrecioConDescuento();
-                float porcentajeMaxDeDescuento = 25.0f;
-                float porcentajeDeDescuento = ((ProductoDeLimpieza) producto).getPorcentajeDescuento();
+                Float porcentajeGanancia = ((precioTotalProducto - (producto.getPrecioVentaAlPublico() * cantidadVendida)) / (producto.getPrecioVentaAlPublico() * cantidadVendida)) * 100;
+                Float porcentajeGananciaMaximo = 25.0f;
+                Float porcentajeGananciaMinimo = 10.0f;
+                Float precioConDescuento = ((ProductoDeLimpieza) producto).getPrecioConDescuento();
+                Float porcentajeMaxDeDescuento = 25.0f;
+                Float porcentajeDeDescuento = ((ProductoDeLimpieza) producto).getPorcentajeDescuento();
 
                 if (((ProductoDeLimpieza) producto).getTipoDeAplicacion().equalsIgnoreCase("ropa") || ((ProductoDeLimpieza) producto).getTipoDeAplicacion().equalsIgnoreCase("multiuso")){
                     if (porcentajeGanancia > porcentajeGananciaMaximo){

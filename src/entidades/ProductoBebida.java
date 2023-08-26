@@ -20,6 +20,7 @@ public class ProductoBebida extends Producto implements Comestibles, ConDescuent
         this.esImportado = esImportado;
         this.fechaVencimiento = fechaVencimiento;
         this.calorias = calorias;
+        this.porcentajeDescuento = 0.0F;
     }
 
     public void AsignarGraduacionAlcoholica(byte graduacionAlcoholica){

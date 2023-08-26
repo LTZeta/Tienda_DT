@@ -19,6 +19,7 @@ public class ProductoEnvasado extends Producto implements Comestibles, ConDescue
         this.esImportado = esImportado;
         this.fechaVencimiento = fechaVencimiento;
         this.calorias = calorias;
+        this.porcentajeDescuento = 0.0F;
     }
 
     // Implementación de métodos de la interfaz Comestible
