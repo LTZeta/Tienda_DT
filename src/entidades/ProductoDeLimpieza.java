@@ -22,18 +22,16 @@ public class ProductoDeLimpieza extends Producto implements ConDescuento {
     }
 
     @Override
-    public void setPorcentajeDescuento(Float porcentajeDescuento) {
-
-    }
+    public void setPorcentajeDescuento(Float porcentajeDescuento) {this.porcentajeDescuento = porcentajeDescuento;}
 
     @Override
     public Float getPorcentajeDescuento() {
-        return null;
+        return porcentajeDescuento;
     }
 
     @Override
     public Float getPrecioConDescuento() {
-        return null;
+        return getPrecioVentaAlPublico() * (1 - porcentajeDescuento / 100);
     }
 
 

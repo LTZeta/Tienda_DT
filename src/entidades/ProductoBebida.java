@@ -26,11 +26,6 @@ public class ProductoBebida extends Producto implements Comestibles, ConDescuent
         this.graduacionAlcoholica = graduacionAlcoholica;
     }
 
-    @Override
-    public void setFechaVencimiento(Date fechaVencimiento) {
-
-    }
-
     public boolean getEsAlcoholica() {
         return esAlcoholica;
     }
@@ -51,38 +46,42 @@ public class ProductoBebida extends Producto implements Comestibles, ConDescuent
         return esImportado;
     }
 
+    @Override
+    public void setFechaVencimiento(Date fechaVencimiento) {this.fechaVencimiento = fechaVencimiento;}
     public void setEsImportado(boolean esImportado) {
         this.esImportado = esImportado;
     }
 
+
     @Override
     public Date getFechaVencimiento() {
-        return null;
+        return fechaVencimiento;
     }
 
     @Override
     public void setCalorias(Integer calorias) {
-
+        this.calorias = calorias;
     }
 
     @Override
     public Integer getCalorias() {
-        return null;
+        return calorias;
     }
 
+    // Implementación de métodos de la interfaz ConDescuento
     @Override
-    public void setPorcentajeDescuento(Float porcentajeDescuento) {
-
+    public void setPorcentajeDescuento(Float porcentaje) {
+        this.porcentajeDescuento = porcentaje;
     }
 
     @Override
     public Float getPorcentajeDescuento() {
-        return null;
+        return porcentajeDescuento;
     }
 
     @Override
     public Float getPrecioConDescuento() {
-        return null;
+        return getPrecioVentaAlPublico() * (1 - porcentajeDescuento / 100);
     }
 
     @Override

@@ -1,10 +1,13 @@
 package entidades;
 
+import interfaces.Comestibles;
+import interfaces.ConDescuento;
+
 import java.util.*;
 
 public class Tienda {
     private String nombre;
-    private final Integer MAX_PRODUCTOS_EN_STOCK=100;
+    private final Integer MAX_PRODUCTOS_EN_STOCK=1000000;
     private Float saldoEnCaja;
     private Map<String, ArrayList<Producto>> productosEnStock;
     private final String KEY_ENVASADOS = "envasados";
@@ -24,7 +27,7 @@ public class Tienda {
     }
 
     public void agregarProductoAStock(String tipo, Producto producto, int cantidad) throws Exception {
-        if (productosEnStock.containsKey(tipo) && productosEnStock.get(tipo).size() + 1 <= MAX_PRODUCTOS_EN_STOCK) {
+        if (productosEnStock.containsKey(tipo) && productosEnStock.get(tipo).size() + producto.getCantEnStock() <= MAX_PRODUCTOS_EN_STOCK) {
             productosEnStock.get(tipo).add(producto);
             Float costoTotal = producto.getCostoProducto() * cantidad;
             if (saldoEnCaja >= costoTotal) {
@@ -46,6 +49,10 @@ public class Tienda {
             if (producto.getId().equalsIgnoreCase(nuevoProducto.getId())){
                 throw new Exception("El producto que desea crear ya existe\n" + "El producto es: '"+producto.getDescripcion()+"'");
             }
+        }
+
+        if (nuevoProducto.getCostoProducto() * nuevoProducto.getCantEnStock() > saldoEnCaja){
+            throw new Exception("El producto no podrá ser agregado a la tienda por saldo insuficiente en la caja.");
         }
         try {
             agregarProductoAStock(KEY_ENVASADOS, nuevoProducto, nuevoProducto.getCantEnStock());
@@ -85,7 +92,7 @@ public class Tienda {
         }
     }
 
-    public void deshabilitarProducto(String tipo, String codigoProducto) throws Exception {
+    public void deshabilitarProducto(String tipo, String codigoProducto) {
         ArrayList<Producto> productosEnLista = productosEnStock.get(tipo);
         for (int i=0; i<productosEnLista.size(); i++){
             if (productosEnLista.get(i).getId().equalsIgnoreCase(codigoProducto)){
@@ -93,74 +100,184 @@ public class Tienda {
                 productosEnStock.replace(tipo, productosEnLista);
             }
         }
-
     }
 
-    public void venderProductos(List<Producto> productos) {
-        // Implementación
-        Float totalVenta = 0.0f;
-        boolean hayStockInsuficiente = false;
-        boolean hayProductosNoDisponibles = false;
-
-        for (Producto producto : productos) {
-            if ((producto.getCantEnStock() <= 0) || !producto.getEstaDisponible()) {
-                hayProductosNoDisponibles = true;
-                continue;
-            }
-
-            Integer cantidadVendida = Math.min(producto.getCantEnStock(), 10);
-            Float precioUnitario = producto.getPrecioVentaAlPublico();
-
-            // Aplicar impuesto si es un producto importado
-            if (producto instanceof ProductoEnvasado){
-                if (((ProductoEnvasado) producto).getEsImportado()){
-                    precioUnitario *= 1.10f; // Aplicar impuesto del 10%
-                }
-            } else if (producto instanceof ProductoBebida) {
-                if (((ProductoBebida) producto).getEsImportado()){
-                    precioUnitario *= 1.10f; // Aplicar impuesto del 10%
+    public Producto buscarProductoPorId(String id) {
+        // Buscar el producto en las 3 listas, ya que no se conoce previamente la categoria
+        for (List<Producto> listaProductos : productosEnStock.values()) {
+            for (Producto producto : listaProductos) {
+                if (producto.getId().equals(id)) {
+                    return producto;
                 }
             }
-            totalVenta += cantidadVendida * precioUnitario;
-            producto.setCantEnStock(producto.getCantEnStock() - cantidadVendida);
         }
-
-        // Imprimir mensajes adicionales
-        if (hayStockInsuficiente) {
-            System.out.println("Hay productos con stock disponible menor al solicitado.");
-        }
-        if (hayProductosNoDisponibles) {
-            System.out.println("Algunos productos no están disponibles para la venta.");
-        }
-
-        System.out.println("TOTAL VENTA: " + totalVenta);
+        return null; // Si no se encuentra el producto
     }
-
-
-    @Override
-    public String toString() {
-        return "Tienda{" +
-                "nombre='" + nombre + '\'' +
-                ", MAX_PRODUCTOS_EN_STOCK=" + MAX_PRODUCTOS_EN_STOCK +
-                ", saldoEnCaja=" + saldoEnCaja +
-                ", productosEnStock=" + productosEnStock +
-                '}';
-    }
-
     public void mostrarProductos(){
         for (Map.Entry<String, ArrayList<Producto>> entry : productosEnStock.entrySet()) {
             String categoria = entry.getKey();
             List<Producto> productos = entry.getValue();
 
-            System.out.println("Categoría: " + categoria);
+            System.out.println("\nCategoría: " + categoria);
 
             for (Producto producto : productos) {
-                System.out.println("Identificador: " + producto.getId());
+                System.out.println("\nIdentificador: " + producto.getId());
                 System.out.println("Descripción: " + producto.getDescripcion());
-                // Mostrar otros atributos relevantes del producto
-                System.out.println();
+                System.out.println("Cantidad en Stock: " + producto.getCantEnStock());
             }
         }
+    }
+
+
+
+    public void venderProductos(List<ItemCompra> carrito) throws Exception {
+        float totalVenta = 0.0f; // Variable para almacenar el total de la venta
+        boolean hayStockInsuficiente = false;
+
+
+        for (ItemCompra item : carrito) {
+            Producto producto = item.getProducto();
+
+            if (!producto.getEstaDisponible()) {
+                System.out.println("El producto " + producto.getId() + " " + producto.getDescripcion() + " no se encuentra disponible.");
+                continue; // Saltar al siguiente producto en el carrito para evitar que se corte la ejecución de la venta solo por un producto con incidencia.
+            }
+
+            int cantidadVendida = Math.min(item.getCantidad(), producto.getCantEnStock());
+
+            if (cantidadVendida <= 0) {
+                System.out.println("Producto " + producto.getId() + " " + producto.getDescripcion() + " no disponible en stock.");
+                continue;
+            }
+
+            // Restricción de hasta 10 unidades por producto
+            if (cantidadVendida > 10) {
+                System.out.println("No se pueden vender más de 10 unidades de " + producto.getId() + " " + producto.getDescripcion());
+                continue;
+            }
+
+            // Verificar stock disponible
+            if (cantidadVendida > producto.getCantEnStock() && producto.getCantEnStock() > 0) {
+                System.out.println("No hay suficiente stock para vender " + cantidadVendida + " unidades de " + producto.getId());
+                cantidadVendida = producto.getCantEnStock(); // Vender solo lo que hay en stock
+                hayStockInsuficiente = true;
+            }
+
+            // Calcular el precio total del producto
+            Float precioVentaUnidad = producto.getPrecioVentaAlPublico();
+            Float precioTotalProducto = precioVentaUnidad * cantidadVendida;
+
+            if (producto instanceof Comestibles){
+                float porcentajeGanancia = ((precioTotalProducto - (producto.getPrecioVentaAlPublico() * cantidadVendida)) / (producto.getPrecioVentaAlPublico() * cantidadVendida)) * 100;
+                float porcentajeGananciaMaximo = 20.0f;
+                if (porcentajeGanancia > porcentajeGananciaMaximo) {
+                    System.out.println("El porcentaje de ganancia para el producto " + producto.getId() + " " + producto.getDescripcion() + " excede el máximo permitido.");
+                    continue;
+                }
+            }
+
+            if (producto instanceof ProductoDeLimpieza){
+                float porcentajeGanancia = ((precioTotalProducto - (producto.getPrecioVentaAlPublico() * cantidadVendida)) / (producto.getPrecioVentaAlPublico() * cantidadVendida)) * 100;
+                float porcentajeGananciaMaximo = 25.0f;
+                float porcentajeGananciaMinimo = 10.0f;
+                float precioConDescuento = ((ProductoDeLimpieza) producto).getPrecioConDescuento();
+                float porcentajeMaxDeDescuento = 25.0f;
+                float porcentajeDeDescuento = ((ProductoDeLimpieza) producto).getPorcentajeDescuento();
+
+                if (((ProductoDeLimpieza) producto).getTipoDeAplicacion().equalsIgnoreCase("ropa") || ((ProductoDeLimpieza) producto).getTipoDeAplicacion().equalsIgnoreCase("multiuso")){
+                    if (porcentajeGanancia > porcentajeGananciaMaximo){
+                        System.out.println("El porcentaje de ganancia para el producto " + producto.getId() + " " + producto.getDescripcion() + " excede el máximo permitido.");
+                        continue;
+                    }
+                } else if (porcentajeGanancia > porcentajeGananciaMaximo || porcentajeGanancia < porcentajeGananciaMinimo) {
+                    System.out.println("El porcentaje de ganancia para el producto " + producto.getId() + " " + producto.getDescripcion() + " no cumple con el máximo o minimo permitido.");
+                    continue;
+                }
+                if (precioConDescuento < producto.getCostoProducto() || porcentajeDeDescuento > porcentajeMaxDeDescuento) {
+                    System.out.println("El descuento registrado para el producto " + producto.getId() + " " + producto.getDescripcion() + " no pudo ser aplicado.");
+                    continue;
+                }
+            }
+
+            if (producto instanceof ProductoEnvasado){
+                float precioConDescuento = ((ProductoEnvasado) producto).getPrecioConDescuento();
+                float porcentajeMaxDeDescuento = 20.0f;
+                float porcentajeDeDescuento = ((ProductoEnvasado) producto).getPorcentajeDescuento();
+
+                if (precioConDescuento < producto.getCostoProducto() || porcentajeDeDescuento > porcentajeMaxDeDescuento) {
+                    System.out.println("El descuento registrado para el producto " + producto.getId() + " " + producto.getDescripcion() + " no pudo ser aplicado.");
+                    continue;
+                }
+
+                if (((ProductoEnvasado) producto).getEsImportado()){
+                    precioVentaUnidad = (producto.getPrecioVentaAlPublico() * 1.10f);
+                    precioTotalProducto = precioVentaUnidad * cantidadVendida;
+                }
+            }
+
+            if (producto instanceof ProductoBebida){
+                float precioConDescuento = ((ProductoBebida) producto).getPrecioConDescuento();
+                float porcentajeMaxDeDescuento = 20.0f;
+                float porcentajeDeDescuento = ((ProductoBebida) producto).getPorcentajeDescuento();
+
+                if (precioConDescuento < producto.getCostoProducto() || porcentajeDeDescuento > porcentajeMaxDeDescuento) {
+                    System.out.println("El descuento registrado para el producto " + producto.getId() + " " + producto.getDescripcion() + " no pudo ser aplicado.");
+                    continue;
+                }
+
+                if (((ProductoBebida) producto).getEsImportado()){
+                    precioVentaUnidad = (producto.getPrecioVentaAlPublico() * 1.10f);
+                    precioTotalProducto = precioVentaUnidad * cantidadVendida;
+                }
+
+            }
+
+            // Actualizar el total de la venta
+            totalVenta += precioTotalProducto;
+
+            // Imprimir el detalle de la venta para el producto actual
+            System.out.println(producto.getId() + " " + producto.getDescripcion() + " " +
+                    cantidadVendida + " x " + precioVentaUnidad);
+        }
+
+        if (hayStockInsuficiente) {
+            System.out.println("Hay productos con stock disponible menor al solicitado.");
+        }
+
+        System.out.println("TOTAL VENTA: " + totalVenta);
+
+    }
+
+    public List<Producto> generarListaDeProductos(List<ItemCompra> carrito) throws Exception {
+        if (carrito.isEmpty()){
+            List<Producto> productos = new ArrayList<>();
+            for (ItemCompra item: carrito) {
+                productos.add(item.getProducto());
+            }
+            return productos;
+        }else throw new Exception("El carrito esta vacio, no se modifico el stock ni se realizo ninguna venta");
+    }
+
+    public void definirDescuento(String categoria, Producto producto, Float nuevoPorcentajeDescuento) throws Exception {
+
+        List<Producto> listaProductos = productosEnStock.get(categoria);
+        if (listaProductos != null && listaProductos.contains(producto)) {
+            if (categoria.equalsIgnoreCase(KEY_BEBIDAS)){
+                ((ProductoBebida)producto).setPorcentajeDescuento(nuevoPorcentajeDescuento);
+                System.out.println("Descuento actualizado para el producto " + producto.getId() + " " + producto.getDescripcion());
+            }
+            if (categoria.equalsIgnoreCase(KEY_ENVASADOS)){
+                ((ProductoEnvasado)producto).setPorcentajeDescuento(nuevoPorcentajeDescuento);
+                System.out.println("Descuento actualizado para el producto " + producto.getId() + " " + producto.getDescripcion());
+            }
+            if (categoria.equalsIgnoreCase(KEY_LIMPIEZA)){
+                ((ProductoDeLimpieza)producto).setPorcentajeDescuento(nuevoPorcentajeDescuento);
+                System.out.println("Descuento actualizado para el producto " + producto.getId() + " " + producto.getDescripcion());
+            }else {
+                System.out.println("El producto no se encuentra en stock.");
+            }
+        }else throw new Exception("El producto no se encuentra en stock, o aún no hay ningún producto cargado.");
+
     }
 
 
@@ -210,15 +327,5 @@ public class Tienda {
 
     public Map<String, ArrayList<Producto>> getProductosEnStock() {
         return productosEnStock;
-    }
-
-    public List<Producto> generarListaDeProductos(List<ItemCompra> carrito) throws Exception {
-        if (carrito.isEmpty()){
-            List<Producto> productos = new ArrayList<>();
-            for (ItemCompra item: carrito) {
-                productos.add(item.getProducto());
-            }
-            return productos;
-        }else throw new Exception("El carrito esta vacio, no se modifico el stock ni se realizo ninguna venta");
     }
 }
