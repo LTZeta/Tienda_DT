@@ -2,6 +2,8 @@ package entidades;
 
 import interfaces.ConDescuento;
 
+import java.text.SimpleDateFormat;
+
 public class ProductoDeLimpieza extends Producto implements ConDescuento {
 
     private String tipoDeAplicacion;

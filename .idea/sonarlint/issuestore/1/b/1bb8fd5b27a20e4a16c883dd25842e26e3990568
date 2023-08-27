@@ -1,95 +1,113 @@
 
-g	java:S112&"FDefine and throw a dedicated exception instead of using a generic one.(´¨¨Šıÿÿÿÿ8Ş›ÿü¢1
-g	java:S112)"FDefine and throw a dedicated exception instead of using a generic one.(­Í¹ışÿÿÿÿ8Ş›ÿü¢1
-b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Œ’‰8Ş›ÿü¢1
-g	java:S1122"FDefine and throw a dedicated exception instead of using a generic one.(ÓãùÌşÿÿÿÿ8Ş›ÿü¢1
-g	java:S1127"FDefine and throw a dedicated exception instead of using a generic one.(ãšç•ùÿÿÿÿ8Ş›ÿü¢1
-g	java:S112E"FDefine and throw a dedicated exception instead of using a generic one.(ÓãùÌşÿÿÿÿ8Ş›ÿü¢1
-g	java:S112T"FDefine and throw a dedicated exception instead of using a generic one.(ÓãùÌşÿÿÿÿ8Ş›ÿü¢1
-h	java:S112…"FDefine and throw a dedicated exception instead of using a generic one.(ë˜¶‹ÿÿÿÿÿ8ß›ÿü¢1
-h	java:S112‚"FDefine and throw a dedicated exception instead of using a generic one.(öİªıÿÿÿÿ8ß›ÿü¢1
-h	java:S112û"FDefine and throw a dedicated exception instead of using a generic one.(˜ıØ„ÿÿÿÿÿ8ß›ÿü¢1
-h	java:S112—"FDefine and throw a dedicated exception instead of using a generic one.(ÿòÇËúÿÿÿÿ8§²ÿü¢1
-c	java:S112…"FDefine and throw a dedicated exception instead of using a generic one.(çÈÓ†8«Ö–ş¢1
+g	java:S112*"FDefine and throw a dedicated exception instead of using a generic one.(´¨¨Šıÿÿÿÿ8”úÆÈ£1
+g	java:S112-"FDefine and throw a dedicated exception instead of using a generic one.(­Í¹ışÿÿÿÿ8•úÆÈ£1
+b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(øÚ®è8•úÆÈ£1
+g	java:S1126"FDefine and throw a dedicated exception instead of using a generic one.(ÓãùÌşÿÿÿÿ8•úÆÈ£1
+g	java:S112<"FDefine and throw a dedicated exception instead of using a generic one.(ãšç•ùÿÿÿÿ8•úÆÈ£1
+g	java:S112I"FDefine and throw a dedicated exception instead of using a generic one.(ÓãùÌşÿÿÿÿ8•úÆÈ£1
+g	java:S112X"FDefine and throw a dedicated exception instead of using a generic one.(ÓãùÌşÿÿÿÿ8•úÆÈ£1
+h	java:S112„"FDefine and throw a dedicated exception instead of using a generic one.(ºËøÆúÿÿÿÿ8•úÆÈ£1
+a	java:S112y"FDefine and throw a dedicated exception instead of using a generic one.(­ÿ8•úÆÈ£1
+h	java:S112—"FDefine and throw a dedicated exception instead of using a generic one.(•²üÿÿÿÿ8•úÆÈ£1
+h	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Æ‰Â„ùÿÿÿÿ8•úÆÈ£1
+h	java:S112¢"FDefine and throw a dedicated exception instead of using a generic one.(­‚ºûÿÿÿÿ8•úÆÈ£1
+h	java:S112¶"FDefine and throw a dedicated exception instead of using a generic one.(›Ëçˆıÿÿÿÿ8•úÆÈ£1
+c	java:S112ä"FDefine and throw a dedicated exception instead of using a generic one.(šàñ€8•úÆÈ£1
+c	java:S112Ñ"FDefine and throw a dedicated exception instead of using a generic one.(îùŞ½8•úÆÈ£1
+h	java:S112›"FDefine and throw a dedicated exception instead of using a generic one.(·™ÜÏøÿÿÿÿ8•úÆÈ£1
+c	java:S112‹"FDefine and throw a dedicated exception instead of using a generic one.(çÈÓ†8•úÆÈ£1
 u
-java:S1192Å"WDefine a constant instead of duplicating this literal " no pudo ser aplicado." 3 times.( Õ½ô8ß›ÿü¢1
+java:S1192‰"WDefine a constant instead of duplicating this literal " no pudo ser aplicado." 3 times.( Õ½ô8—úÆÈ£1
 ‹
-java:S1192‹"hDefine a constant instead of duplicating this literal "Descuento actualizado para el producto " 3 times.(Úà±Èûÿÿÿÿ8ß›ÿü¢1
-†
-java:S1192;"dDefine a constant instead of duplicating this literal "El producto fue creado exitosamente" 3 times.(÷Ù¤„øÿÿÿÿ8à›ÿü¢1
-ˆ
-java:S1192Å"jDefine a constant instead of duplicating this literal "El descuento registrado para el producto " 3 times.( Õ½ô8à›ÿü¢1
-Š
-java:S1192®"lDefine a constant instead of duplicating this literal "El porcentaje de ganancia para el producto " 3 times.(–’·Ö8à›ÿü¢1
+java:S1192‘"hDefine a constant instead of duplicating this literal "Descuento actualizado para el producto " 3 times.(Úà±Èûÿÿÿÿ8—úÆÈ£1
 t
-java:S11922"RDefine a constant instead of duplicating this literal "El producto es: '" 3 times.(ÓãùÌşÿÿÿÿ8à›ÿü¢1
+java:S11926"RDefine a constant instead of duplicating this literal "El producto es: '" 3 times.(ÓãùÌşÿÿÿÿ8—úÆÈ£1
 ‰
-java:S11922"gDefine a constant instead of duplicating this literal "El producto que desea crear ya existe
-" 3 times.(ÓãùÌşÿÿÿÿ8à›ÿü¢1
-v	java:S135Š"YReduce the total number of break and continue statements in this loop to use at most one.(Ù¸¸â8à›ÿü¢1
-‚	java:S116
-"aRename this field "MAX_PRODUCTOS_EN_STOCK" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Îêı·ûÿÿÿÿ8îœÿü¢1
-y	java:S116"XRename this field "KEY_ENVASADOS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğ±Í´ÿÿÿÿÿ8îœÿü¢1
-q	java:S116"VRename this field "KEY_BEBIDAS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒÅç8îœÿü¢1
-x	java:S116"WRename this field "KEY_LIMPIEZA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ıá”¿şÿÿÿÿ8îœÿü¢1
-{	java:S116"_Rename this field "PREFIJO_ID_ENVASADOS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ÕÁ¦8îœÿü¢1
-~	java:S116"]Rename this field "PREFIJO_ID_BEBIDAS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×‚É‘ıÿÿÿÿ8îœÿü¢1
-	java:S116"^Rename this field "PREFIJO_ID_LIMPIEZA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–™ğƒøÿÿÿÿ8îœÿü¢1
+java:S11926"gDefine a constant instead of duplicating this literal "El producto que desea crear ya existe
+" 3 times.(ÓãùÌşÿÿÿÿ8—úÆÈ£1
+ˆ
+java:S1192‰"jDefine a constant instead of duplicating this literal "El descuento registrado para el producto " 3 times.( Õ½ô8—úÆÈ£1
+v	java:S135Ù"YReduce the total number of break and continue statements in this loop to use at most one.(Ù¸¸â8—úÆÈ£1
+‚	java:S116"aRename this field "MAX_PRODUCTOS_EN_STOCK" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Îêı·ûÿÿÿÿ8ÆûÆÈ£1
+y	java:S116"XRename this field "KEY_ENVASADOS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğ±Í´ÿÿÿÿÿ8ÆûÆÈ£1
+q	java:S116"VRename this field "KEY_BEBIDAS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒÅç8ÆûÆÈ£1
+x	java:S116"WRename this field "KEY_LIMPIEZA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ıá”¿şÿÿÿÿ8ÆûÆÈ£1
+{	java:S116"_Rename this field "PREFIJO_ID_ENVASADOS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ÕÁ¦8ÆûÆÈ£1
+~	java:S116"]Rename this field "PREFIJO_ID_BEBIDAS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×‚É‘ıÿÿÿÿ8ÆûÆÈ£1
+	java:S116"^Rename this field "PREFIJO_ID_LIMPIEZA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–™ğƒøÿÿÿÿ8ÆûÆÈ£1
 C
-java:S1170
-"!Make this final field static too.(Îêı·ûÿÿÿÿ8îœÿü¢1
+java:S1170"!Make this final field static too.(Îêı·ûÿÿÿÿ8ÆûÆÈ£1
 C
-java:S1170"!Make this final field static too.(ğ±Í´ÿÿÿÿÿ8îœÿü¢1
+java:S1170"!Make this final field static too.(ğ±Í´ÿÿÿÿÿ8ÆûÆÈ£1
 =
-java:S1170"!Make this final field static too.(ƒÅç8îœÿü¢1
+java:S1170"!Make this final field static too.(ƒÅç8ÆûÆÈ£1
 C
-java:S1170"!Make this final field static too.(ıá”¿şÿÿÿÿ8îœÿü¢1
+java:S1170"!Make this final field static too.(ıá”¿şÿÿÿÿ8ÆûÆÈ£1
 >
-java:S1170"!Make this final field static too.(’ÕÁ¦8îœÿü¢1
+java:S1170"!Make this final field static too.(’ÕÁ¦8ÆûÆÈ£1
 C
-java:S1170"!Make this final field static too.(×‚É‘ıÿÿÿÿ8îœÿü¢1
+java:S1170"!Make this final field static too.(×‚É‘ıÿÿÿÿ8ÆûÆÈ£1
 C
-java:S1170"!Make this final field static too.(–™ğƒøÿÿÿÿ8îœÿü¢1
-U	java:S106#"9Replace this use of System.out or System.err by a logger.(É…¶Ö8òœÿü¢1
-Z	java:S106;"9Replace this use of System.out or System.err by a logger.(÷Ù¤„øÿÿÿÿ8ôœÿü¢1
-Z	java:S106="9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8ôœÿü¢1
-Z	java:S106J"9Replace this use of System.out or System.err by a logger.(÷Ù¤„øÿÿÿÿ8õœÿü¢1
-Z	java:S106L"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8õœÿü¢1
-Z	java:S106Y"9Replace this use of System.out or System.err by a logger.(÷Ù¤„øÿÿÿÿ8öœÿü¢1
-Z	java:S106["9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8öœÿü¢1
-U	java:S106y"9Replace this use of System.out or System.err by a logger.(Ğ™Û‘8øœÿü¢1
-U	java:S106|"9Replace this use of System.out or System.err by a logger.(––šÑ8ùœÿü¢1
-Z	java:S106}"9Replace this use of System.out or System.err by a logger.(¾ß¯üÿÿÿÿ8ùœÿü¢1
-Z	java:S106~"9Replace this use of System.out or System.err by a logger.(À¿İÁıÿÿÿÿ8ùœÿü¢1
-u
-java:S3776…"RRefactor this method to reduce its Cognitive Complexity from 50 to the 15 allowed.(ë˜¶‹ÿÿÿÿÿ8ùœÿü¢1
+java:S1170"!Make this final field static too.(–™ğƒøÿÿÿÿ8ÆûÆÈ£1
+U	java:S106#"9Replace this use of System.out or System.err by a logger.(É…¶Ö8ÊûÆÈ£1
+U	java:S106$"9Replace this use of System.out or System.err by a logger.(“î¶â8ÊûÆÈ£1
+Z	java:S106&"9Replace this use of System.out or System.err by a logger.(ï§øÿÿÿÿ8ËûÆÈ£1
+U	java:S106;"9Replace this use of System.out or System.err by a logger.(Äàï8ÌûÆÈ£1
+Z	java:S106A"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8ÍûÆÈ£1
+Z	java:S106N"9Replace this use of System.out or System.err by a logger.(÷Ù¤„øÿÿÿÿ8ÎûÆÈ£1
+Z	java:S106P"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8ÎûÆÈ£1
+Z	java:S106]"9Replace this use of System.out or System.err by a logger.(÷Ù¤„øÿÿÿÿ8ÏûÆÈ£1
+Z	java:S106_"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8ÏûÆÈ£1
+[	java:S106Œ"9Replace this use of System.out or System.err by a logger.(ú¡ôİøÿÿÿÿ8ÓûÆÈ£1
+V	java:S106™"9Replace this use of System.out or System.err by a logger.(·àô™8ÕûÆÈ£1
 
-java:S1130…"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(ë˜¶‹ÿÿÿÿÿ8—Ø–ş¢1
-[	java:S106"9Replace this use of System.out or System.err by a logger.(ßà“ïüÿÿÿÿ8ûœÿü¢1
-V	java:S106•"9Replace this use of System.out or System.err by a logger.(úºÖà8ûœÿü¢1
-[	java:S106›"9Replace this use of System.out or System.err by a logger.(¾è‡úÿÿÿÿÿ8ûœÿü¢1
-V	java:S106¡"9Replace this use of System.out or System.err by a logger.(ßûßÀ8üœÿü¢1
-V	java:S106®"9Replace this use of System.out or System.err by a logger.(–’·Ö8ıœÿü¢1
-V	java:S106½"9Replace this use of System.out or System.err by a logger.(–’·Ö8ıœÿü¢1
-V	java:S106Á"9Replace this use of System.out or System.err by a logger.(ßùÚ³8şœÿü¢1
-V	java:S106Å"9Replace this use of System.out or System.err by a logger.( Õ½ô8şœÿü¢1
-V	java:S106Ğ"9Replace this use of System.out or System.err by a logger.( Õ½ô8şœÿü¢1
-V	java:S106à"9Replace this use of System.out or System.err by a logger.( Õ½ô8ÿœÿü¢1
-[	java:S106ï"9Replace this use of System.out or System.err by a logger.(ÊÖ”Öÿÿÿÿÿ8ÿœÿü¢1
-U	java:S106ô"9Replace this use of System.out or System.err by a logger.(‡şì88ÿœÿü¢1
-[	java:S106÷"9Replace this use of System.out or System.err by a logger.(ØŸúÿÿÿÿ8ÿœÿü¢1
-[	java:S106‹"9Replace this use of System.out or System.err by a logger.(Úà±Èûÿÿÿÿ8ÿü¢1
-[	java:S106"9Replace this use of System.out or System.err by a logger.(Úà±Èûÿÿÿÿ8ÿü¢1
-[	java:S106“"9Replace this use of System.out or System.err by a logger.(Úà±Èûÿÿÿÿ8ÿü¢1
-V	java:S106•"9Replace this use of System.out or System.err by a logger.(—Ô©š8‚ÿü¢1
-k	java:S100œ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒÔçâ8‚ÿü¢1
-k	java:S100 "NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ñû—è8‚ÿü¢1
-k	java:S100¤"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãß¶š8‚ÿü¢1
-k	java:S100¨"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(á¹¦í8‚ÿü¢1
-k	java:S100¬"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åÙ†š8‚ÿü¢1
-p	java:S100°"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€êĞ¸øÿÿÿÿ8‚ÿü¢1
-p	java:S100¼"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßïşÙşÿÿÿÿ8‚ÿü¢1
-Q
-java:S1128"4Remove this unused import 'interfaces.ConDescuento'.(Ïøâß8¦Ø–ş¢1
-é
-java:S6541…"ÅA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 89 to 64, Complexity from 26 to 14, Nesting Level from 4 to 2, Number of Variables from 22 to 6.(ë˜¶‹ÿÿÿÿÿ8ƒÿü¢1
+java:S1130¢"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(­‚ºûÿÿÿÿ8ÕûÆÈ£1
+[	java:S106«"9Replace this use of System.out or System.err by a logger.(ğ¤€šùÿÿÿÿ8ÖûÆÈ£1
+[	java:S106´"9Replace this use of System.out or System.err by a logger.(µ©Î…ÿÿÿÿÿ8×ûÆÈ£1
+[	java:S106µ"9Replace this use of System.out or System.err by a logger.(ï§øÿÿÿÿ8×ûÆÈ£1
+V	java:S106¿"9Replace this use of System.out or System.err by a logger.(Ğ™Û‘8×ûÆÈ£1
+V	java:S106Ã"9Replace this use of System.out or System.err by a logger.(––šÑ8ØûÆÈ£1
+[	java:S106Ä"9Replace this use of System.out or System.err by a logger.(¾ß¯üÿÿÿÿ8ØûÆÈ£1
+[	java:S106Å"9Replace this use of System.out or System.err by a logger.(À¿İÁıÿÿÿÿ8ØûÆÈ£1
+V	java:S106Ç"9Replace this use of System.out or System.err by a logger.(Â×ê…8ØûÆÈ£1
+V	java:S106É"9Replace this use of System.out or System.err by a logger.(•ã¾½8ØûÆÈ£1
+p
+java:S3776Ñ"RRefactor this method to reduce its Cognitive Complexity from 55 to the 15 allowed.(îùŞ½8ØûÆÈ£1
+i
+java:S1854Ö"FRemove this useless assignment to local variable "antiguoSaldoEnCaja".(‚˜®Êøÿÿÿÿ8ÙûÆÈ£1
+Z
+java:S1481Ö"7Remove this unused "antiguoSaldoEnCaja" local variable.(‚˜®Êøÿÿÿÿ8ÙûÆÈ£1
+[	java:S106à"9Replace this use of System.out or System.err by a logger.(ßà“ïüÿÿÿÿ8ÚûÆÈ£1
+V	java:S106ê"9Replace this use of System.out or System.err by a logger.(úºÖà8ÚûÆÈ£1
+[	java:S106ğ"9Replace this use of System.out or System.err by a logger.(¾è‡úÿÿÿÿÿ8ÚûÆÈ£1
+V	java:S106‰"9Replace this use of System.out or System.err by a logger.( Õ½ô8ÛûÆÈ£1
+V	java:S106’"9Replace this use of System.out or System.err by a logger.(Şòõù8ÜûÆÈ£1
+V	java:S106–"9Replace this use of System.out or System.err by a logger.(àø’8ÜûÆÈ£1
+[	java:S106—"9Replace this use of System.out or System.err by a logger.(€…ê¨ùÿÿÿÿ8ÜûÆÈ£1
+U	java:S106¡"9Replace this use of System.out or System.err by a logger.(‹©î(8ÜûÆÈ£1
+V	java:S106¯"9Replace this use of System.out or System.err by a logger.( Õ½ô8İûÆÈ£1
+U	java:S106¹"9Replace this use of System.out or System.err by a logger.(‹©î(8İûÆÈ£1
+V	java:S106Ç"9Replace this use of System.out or System.err by a logger.( Õ½ô8ŞûÆÈ£1
+V	java:S106Î"9Replace this use of System.out or System.err by a logger.(‡½©Ï8ŞûÆÈ£1
+[	java:S106×"9Replace this use of System.out or System.err by a logger.(ÊÖ”Öÿÿÿÿÿ8ŞûÆÈ£1
+U	java:S106Ü"9Replace this use of System.out or System.err by a logger.(‡şì88ßûÆÈ£1
+[	java:S106â"9Replace this use of System.out or System.err by a logger.(ØŸúÿÿÿÿ8ßûÆÈ£1
+V	java:S106ã"9Replace this use of System.out or System.err by a logger.(­Ÿ«8ßûÆÈ£1
+Y
+java:S1172õ"6Remove this unused method parameter "cantidadVendida".(¤ùøäıÿÿÿÿ8àûÆÈ£1
+S
+java:S1172€"6Remove this unused method parameter "cantidadVendida".(˜Æ¯`8àûÆÈ£1
+[	java:S106‘"9Replace this use of System.out or System.err by a logger.(Úà±Èûÿÿÿÿ8áûÆÈ£1
+[	java:S106•"9Replace this use of System.out or System.err by a logger.(Úà±Èûÿÿÿÿ8âûÆÈ£1
+[	java:S106™"9Replace this use of System.out or System.err by a logger.(Úà±Èûÿÿÿÿ8âûÆÈ£1
+k	java:S100Ÿ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒÔçâ8âûÆÈ£1
+k	java:S100£"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ñû—è8âûÆÈ£1
+k	java:S100§"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãß¶š8âûÆÈ£1
+k	java:S100«"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(á¹¦í8âûÆÈ£1
+k	java:S100¯"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åÙ†š8ãûÆÈ£1
+p	java:S100³"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€êĞ¸øÿÿÿÿ8ãûÆÈ£1
+p	java:S100¿"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßïşÙşÿÿÿÿ8ãûÆÈ£1
+T
+java:S1128"7Remove this unused import 'java.text.SimpleDateFormat'.(ú¡ÙÛ8ãûÆÈ£1
+ä
+java:S6541Ñ"ÅA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 99 to 64, Complexity from 27 to 14, Nesting Level from 4 to 2, Number of Variables from 20 to 6.(îùŞ½8äûÆÈ£1

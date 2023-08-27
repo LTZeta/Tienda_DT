@@ -3,6 +3,7 @@ package entidades;
 import interfaces.Comestibles;
 import interfaces.ConDescuento;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ProductoBebida extends Producto implements Comestibles, ConDescuento {
@@ -13,6 +14,7 @@ public class ProductoBebida extends Producto implements Comestibles, ConDescuent
     private Date fechaVencimiento;
     private Integer calorias;
     private Float porcentajeDescuento;
+
 
     public ProductoBebida(String id, String descripcion, Integer cantEnStock, Float precioVentaAlPublico, Float costoProducto, boolean estaDisponible, boolean esAlcoholica, boolean esImportado, Date fechaVencimiento, Integer calorias, String categoria) throws Exception{
         super(id, descripcion, cantEnStock, precioVentaAlPublico, costoProducto, estaDisponible, categoria);
@@ -82,6 +84,9 @@ public class ProductoBebida extends Producto implements Comestibles, ConDescuent
 
     @Override
     public Float getPrecioConDescuento() {
+        if (esImportado){
+            return  (getPrecioVentaAlPublico() * 1.10f) * (1 - porcentajeDescuento / 100);
+        }
         return getPrecioVentaAlPublico() * (1 - porcentajeDescuento / 100);
     }
 

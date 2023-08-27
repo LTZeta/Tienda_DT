@@ -3,6 +3,7 @@ package entidades;
 import interfaces.Comestibles;
 import interfaces.ConDescuento;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ProductoEnvasado extends Producto implements Comestibles, ConDescuento {
@@ -56,6 +57,9 @@ public class ProductoEnvasado extends Producto implements Comestibles, ConDescue
 
     @Override
     public Float getPrecioConDescuento() {
+        if (esImportado){
+            return  (getPrecioVentaAlPublico() * 1.10f) * (1 - porcentajeDescuento / 100);
+        }
         return getPrecioVentaAlPublico() * (1 - porcentajeDescuento / 100);
     }
 
