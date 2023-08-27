@@ -57,9 +57,9 @@ V	java:S106¥"9Replace this use of System.out or System.err by a logger.(ñÁã¦
 [	java:S106²"9Replace this use of System.out or System.err by a logger.(µüœøşÿÿÿÿ8úÃòÆ£1
 V	java:S106³"9Replace this use of System.out or System.err by a logger.(ûåé“8úÃòÆ£1
 [	java:S106´"9Replace this use of System.out or System.err by a logger.(Æş±Éıÿÿÿÿ8ê¬õÆ£1
-[	java:S106º"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8ë¬õÆ£1
-[	java:S106¾"9Replace this use of System.out or System.err by a logger.(×ÿÄ´ùÿÿÿÿ8ë¬õÆ£1
-[	java:S106Æ"9Replace this use of System.out or System.err by a logger.(×ÿÄ´ùÿÿÿÿ8ë¬õÆ£1
-[	java:S106É"9Replace this use of System.out or System.err by a logger.(ı«èÙøÿÿÿÿ8ë¬õÆ£1
+[	java:S106»"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8ë¬õÆ£1
+[	java:S106¿"9Replace this use of System.out or System.err by a logger.(×ÿÄ´ùÿÿÿÿ8ë¬õÆ£1
+[	java:S106Ç"9Replace this use of System.out or System.err by a logger.(×ÿÄ´ùÿÿÿÿ8ë¬õÆ£1
+[	java:S106Ê"9Replace this use of System.out or System.err by a logger.(ı«èÙøÿÿÿÿ8ë¬õÆ£1
 é
-java:S6541"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 178 to 64, Complexity from 17 to 14, Nesting Level from 4 to 2, Number of Variables from 33 to 6.(ÙØ¤Şıÿÿÿÿ8úÃòÆ£1
+java:S6541"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 179 to 64, Complexity from 17 to 14, Nesting Level from 4 to 2, Number of Variables from 33 to 6.(ÙØ¤Şıÿÿÿÿ8úÃòÆ£1

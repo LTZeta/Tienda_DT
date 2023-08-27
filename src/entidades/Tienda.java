@@ -118,21 +118,26 @@ public class Tienda {
         }
     }
 
-    public List<String> obtenerComestiblesConMenorDescuento(float porcentajeDescuentoAComprobar) throws Exception {
-
+    public List<String> obtenerComestiblesConMenorDescuento(float porcentajeDescuentoAComparar) throws Exception {
         List<String> comestiblesConMenorDescuento = productosEnStock.values().stream() // Stream de todas las listas de productos
                 .flatMap(List::stream) // Stream de todos los productos
+                .filter(Comestibles.class::isInstance) // Filtrar solo productos comestibles
                 .filter(producto -> producto instanceof ProductoEnvasado || producto instanceof ProductoBebida) // Filtrar solo productos envasados y bebidas
-                .filter(producto -> !((ProductoEnvasado) producto).getEsImportado() || !((ProductoBebida) producto).getEsImportado()) // Filtrar solo productos no importados
-                .filter(producto -> ((ProductoEnvasado) producto).getPorcentajeDescuento() < porcentajeDescuentoAComprobar || ((ProductoBebida) producto).getPorcentajeDescuento() < porcentajeDescuentoAComprobar) // Filtrar por descuento menor al parámetro
+                .filter(producto -> {
+                    if (producto instanceof ProductoEnvasado) {
+                        return ((ProductoEnvasado) producto).getPorcentajeDescuento() < porcentajeDescuentoAComparar;
+                    } else if (producto instanceof ProductoBebida) {
+                        return ((ProductoBebida) producto).getPorcentajeDescuento() < porcentajeDescuentoAComparar;
+                    }
+                    return false;
+                }) // Filtrar por descuento menor al parámetro
                 .sorted(Comparator.comparingDouble(Producto::getPrecioVentaAlPublico)) // Ordenar por precio de venta ascendente
                 .map(producto -> producto.getDescripcion().toUpperCase()) // Obtener descripciones en mayúsculas
                 .collect(Collectors.toList()); // Recolectar en una lista
         if (comestiblesConMenorDescuento.isEmpty()){
-            throw new Exception("No se encontró ningún producto con un descuento menor al %" + porcentajeDescuentoAComprobar);
+            throw new Exception("No se encontró ningún producto con un descuento menor al %" + porcentajeDescuentoAComparar + "\n");
         }
         return comestiblesConMenorDescuento;
-
     }
 
     public void imprimirComestiblesConMenorDescuento(List<String> comestiblesConMenorDescuento) {
@@ -148,7 +153,7 @@ public class Tienda {
                         producto.getId(), producto.getDescripcion(), producto.getCantEnStock())) // Formatear información del producto
                 .collect(Collectors.toList()); // Recolectar en una lista
         if (productosConUtilidadesInferiores.isEmpty()){
-            throw new Exception("No hay productos con utilidades inferiores al %" + porcentajeUtilidad);
+            throw new Exception("No hay productos con utilidades inferiores al %" + porcentajeUtilidad + "\n");
         }
         productosConUtilidadesInferiores.forEach(System.out::println); // Imprimir cada producto
     }

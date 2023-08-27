@@ -170,8 +170,8 @@ public class Main {
                             tienda.imprimirComestiblesConMenorDescuento(comestiblesConMenorDescuento);
                         }catch (Exception e){
                             System.out.println(e.getMessage());
-                            break;
                         }
+                        break;
                     }
                     if (opcionElegida == 2){
                         System.out.println("Escriba el % que se tomará como parámetro ");
@@ -182,6 +182,7 @@ public class Main {
                         scanner.nextLine();
                         try {
                             tienda.listarProductosConUtilidadesInferiores(porcentajeDescuentoAComprobar);
+                            break;
                         }catch (Exception e){
                             System.out.println(e.getMessage());
                             break;
