@@ -216,7 +216,6 @@ public class Tienda {
         boolean hayStockInsuficiente = false; // Variable para determinar si imprimir o no un mensaje informando de una venta de un producto con stock insuficiente.
         float precioTotalProducto; // Variable para ir calculando el total del producto, se va a usar para aplicar descuentos y para calcular el % de ganancia.
         float costoTotalCompra; // Variable que almacena el total de lo que costaría comprar este mismo producto al proveedor (Costo de compra), se utiliza para comparar en % si se respeta lo pautado para cada producto.
-        Float antiguoSaldoEnCaja = saldoEnCaja;
 
         // Iteramos por cada item dentro del carrito
         for (ItemCompra item : carrito) {
