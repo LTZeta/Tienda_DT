@@ -15,7 +15,3 @@ O
 src/interfaces/Comestibles.java,1\c\1cd15662554fc753966895b308c078e4d144bee2
 P
  src/interfaces/ConDescuento.java,a\5\a53c6cbab6fa1b1e0a112f93d305991fdb3b055f
-=
-src/Main.java,9\2\924f089edb4af5ee45c8a9d1129cd28e2b368138
-I
-src/entidades/Tienda.java,1\b\1bb8fd5b27a20e4a16c883dd25842e26e3990568

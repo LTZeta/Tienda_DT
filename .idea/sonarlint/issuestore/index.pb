@@ -15,7 +15,3 @@ U
 %src/entidades/ProductoDeLimpieza.java,0\1\0159a39c9f37caa14a1d0a40b3cb64bbfd670ba5
 S
 #src/entidades/ProductoEnvasado.java,8\7\873c44e55cb0edcc737904460f22abba35aeedda
-=
-src/Main.java,9\2\924f089edb4af5ee45c8a9d1129cd28e2b368138
-I
-src/entidades/Tienda.java,1\b\1bb8fd5b27a20e4a16c883dd25842e26e3990568
